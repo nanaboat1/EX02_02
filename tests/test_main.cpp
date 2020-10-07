@@ -46,8 +46,14 @@ TEST(IsATriangle, Triangle) {
     EXPECT_EQ(check_type(*test_a), Isosceles) << " It is a Isosceles " << std::endl;
 
     
-    test_a->~Triangle();
+    test_a->~Triangle();                         
+    test_a = new Triangle(5,12,13); 
 
+    ASSERT_EQ(check_type(*test_a), Right) <<  " It is Right " << std::endl;
+    EXPECT_EQ(check_type(*test_a), Right) << " It is a Right" << std::endl;
+
+    
+    test_a->~Triangle();       
     test_a = NULL;
 
 }
